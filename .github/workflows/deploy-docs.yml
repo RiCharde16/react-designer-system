@@ -3,7 +3,7 @@ name: Deploy Projeto
 on:
   push:
     branches:
-      - main
+      - Teste1
 
 jobs: 
   build-and-deploy:
