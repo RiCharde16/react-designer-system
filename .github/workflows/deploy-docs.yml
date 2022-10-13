@@ -3,11 +3,11 @@ name: Deploy Projeto
 on:
   push:
     branches:
-      - Teste1
+      - main
 
 jobs: 
   build-and-deploy:
-    rubs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
         uses: actions/setup-nod@v3
