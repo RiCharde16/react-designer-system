@@ -3,7 +3,7 @@ name: Deploy to Prouction
 on: 
   push: 
     branch:
-      - main
+      - Teste1
 jobs:
   build-and-deploy:
     runs-on: ubunto-latest
