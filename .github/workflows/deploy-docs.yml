@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        uses: actions/setup-nod@v3
       - name: Setup Node.js
+        uses: actions/setup-nod@v3
         with:
           node-version: 16
 
