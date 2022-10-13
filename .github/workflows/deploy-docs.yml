@@ -6,17 +6,13 @@ on:
       - main
 
 jobs: 
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
+    name: Build artifact
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install outras coisas
-        run: npm ci --legacy-peer-deps
+      - uses: actions/checkout@v2
+        name: Setup Node.js
+        run: npm ci
 
       - name: Build Project
         run: npm run build
@@ -26,8 +22,8 @@ jobs:
           GITHUB_SHA : ${{ github.sha}}
         run: tar -czf "${GITHUB_SHA}".tar.gz build
       
-      - name: Storign artifact
-        uses: actions/upload-artifact@v3
+      - name: Storing artifact
+        uses: actions/upload-artifact@v2
         with:
           name: app-build
           path: ${{ github.sha}}.tar.gz
