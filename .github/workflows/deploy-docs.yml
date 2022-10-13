@@ -9,25 +9,25 @@ jobs:
   build-and-deploy:
     rubs-on: ubuntu-latest
 
-  steps:
-      uses: actions/setup-nod@v3
-    - name: Setup Node.js
-      with:
-        node-version: 16
+steps:
+    uses: actions/setup-nod@v3
+  - name: Setup Node.js
+    with:
+      node-version: 16
 
-    - name: Install dependencies
-      run: npm ci --force
+  - name: Install dependencies
+    run: npm ci --force
 
-    - name: Build Project
-      run: npm run build
-    
-    - name: Creating deployment artifact
-      env: 
-        GITHUB_SHA : ${{ github.sha}}
-      run: tar -czf "${GITHUB_SHA}".tar.gz build
-    
-    - name: Storign artifact
-      uses: actions/upload-artifact@c3
-      with:
-        name: app-build
-        path: ${{ github.sha}}.tar.gz
+  - name: Build Project
+    run: npm run build
+  
+  - name: Creating deployment artifact
+    env: 
+      GITHUB_SHA : ${{ github.sha}}
+    run: tar -czf "${GITHUB_SHA}".tar.gz build
+  
+  - name: Storign artifact
+    uses: actions/upload-artifact@c3
+    with:
+      name: app-build
+      path: ${{ github.sha}}.tar.gz
