@@ -8,7 +8,6 @@ on:
 jobs: 
   deploy:
     runs-on: ubuntu-18.05
-    name: Build artifact
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-nod@v3
