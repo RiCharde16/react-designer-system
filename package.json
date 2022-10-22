@@ -2,7 +2,7 @@
   "name": "react-designer-system",
   "private": true,
   "version": "0.0.0",
-  "homepage": "react-designer-system/",
+  "homepage": "RiCharde16/react-designer-system",
   "type": "module",
   "scripts": {
     "dev": "vite",
